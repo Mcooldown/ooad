@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@layer base {
+  ul {
+    @apply list-inside;
+    @apply list-disc;
+  }
+  ol {
+    @apply list-inside;
+    @apply list-decimal;
+  }
+  b {
+    @apply font-bold;
+  }
+  p {
+    @apply text-base;
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
