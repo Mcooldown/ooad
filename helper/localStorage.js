@@ -14,6 +14,15 @@ export const checkToken = () => {
   }
   return true
 }
+export const getDataRegister = () => {
+  if(typeof window === 'undefined') return null;
+  return localStorage.getItem("dataRegisterOOAD");
+}
+export const setDataRegister = (token) => {
+  if(token == null) return null;
+  if(typeof window === 'undefined') return null;
+  localStorage.setItem("dataRegisterOOAD", token);
+}
 export const clear = () => {
   if(typeof window === 'undefined') return null;
   return localStorage.clear();
