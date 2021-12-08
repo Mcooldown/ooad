@@ -21,7 +21,12 @@ export const getDataRegister = () => {
 export const setDataRegister = (token) => {
   if(token == null) return null;
   if(typeof window === 'undefined') return null;
-  localStorage.setItem("dataRegisterOOAD", token);
+  localStorage.setItem("dataRegisterOOAD", token);  
+}
+export const clearDataRegister = () => {
+  if(typeof window === 'undefined') return null;
+  localStorage.removeItem('dataRegisterOOAD')
+  return
 }
 export const clear = () => {
   if(typeof window === 'undefined') return null;
