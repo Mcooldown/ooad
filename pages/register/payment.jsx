@@ -5,25 +5,25 @@ import { useMemo } from 'react'
 import { clearDataRegister, getDataRegister } from '../../helper/localStorage'
 import { alertQuestion } from '../../helper/sweetalert'
 
-const Wrapper = loadable(()=>import("../../components/Wrapper-Component"))
+const Wrapper = loadable(() => import("../../components/Wrapper-Component"))
 
-export default function RegisterPayment(){
+export default function RegisterPayment() {
 
   const router = useRouter();
 
-  const renderDataRegister = useMemo(()=>{
+  const renderDataRegister = useMemo(() => {
     return JSON.parse(getDataRegister())
-  },[])
+  }, [])
 
   const atClick = async () => {
     const staQuestion = await alertQuestion("Konfirmasi", "Pastikan kamu telah melakukan pembayaran", "Keluar sekarang", "Tetap disini")
-    if(!staQuestion) return
+    if (!staQuestion) return
     clearDataRegister()
     router.replace("/")
   }
 
-  return(
-    <Wrapper title={"LMan - Payment Page"} description={"Page payment at register school"}>
+  return (
+    <Wrapper title={"Learning Management System for School - Register Payment"} description={"Learning Management System for School - Register Payment"}>
       <div style={{ backgroundImage: `url("/background.png")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="bg-main min-h-screen w-full">
         <div className="container mx-auto px-5 md:px-10 xl:px-20 pt-5 md:pt-10 pb-10">
           <div className="space-y-5">
@@ -32,9 +32,9 @@ export default function RegisterPayment(){
                 Payment Summary
               </p>
               <div className="border w-full border-gray-200 my-5"></div>
-            
+
               <div className="md:flex md:justify-between">
-                
+
                 <div className="">
                   <div className="space-x-1">
                     <span className="text-gray-600">
@@ -74,7 +74,7 @@ export default function RegisterPayment(){
                   </p>
                 </div>
 
-              </div>              
+              </div>
 
             </div>
 
@@ -113,7 +113,7 @@ export default function RegisterPayment(){
               </div>
               <div className="bg-red-400 bg-opacity-50 rounded-md p-5">
                 <p className="text-red-500 text-sm">
-                  Please transfer your payment before 24hrs from now. If we haven’t received your transfer after 24hrs from now, your registration automatically canceled 
+                  Please transfer your payment before 24hrs from now. If we haven’t received your transfer after 24hrs from now, your registration automatically canceled
                 </p>
               </div>
             </div>
