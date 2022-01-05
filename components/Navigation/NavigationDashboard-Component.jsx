@@ -23,7 +23,7 @@ export default function NavigationDashboard({ children }) {
             Welcome,
           </span>
           <span>
-            Student
+            Vincent Hadinata
           </span>
         </div>
       </div>
@@ -37,15 +37,15 @@ export default function NavigationDashboard({ children }) {
             <VscCalendar size={23}></VscCalendar>
             <p className="hidden lg:inline hover:underline">Schedule</p>
           </div>
-          <div className={router.pathname === "/assignment" ? currentClassNameNav : otherClassNameNav}>
+          <div className={router.pathname === "/assignment" ? currentClassNameNav : otherClassNameNav} onClick={() => router.push('/assignment')}>
             <VscOutput size={23}></VscOutput>
             <p className="hidden lg:inline hover:underline">Assigment</p>
           </div>
-          <div className={router.pathname === "/forum" ? currentClassNameNav : otherClassNameNav}>
+          <div className={router.pathname === "/forum" ? currentClassNameNav : otherClassNameNav} onClick={() => router.push('/forum')}>
             <VscFeedback size={23}></VscFeedback>
             <p className="hidden lg:inline hover:underline">Forum</p>
           </div>
-          <div className={router.pathname === "/quiz" ? currentClassNameNav : otherClassNameNav}>
+          <div className={router.pathname === "/quiz" ? currentClassNameNav : otherClassNameNav} onClick={() => router.push('/quiz')}>
             <VscNote size={23}></VscNote>
             <p className="hidden lg:inline hover:underline">Quiz</p>
           </div>

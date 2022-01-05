@@ -2,14 +2,22 @@ import loadable from "@loadable/component";
 
 const Wrapper = loadable(() => import("../components/WrapperDashboard-Component"))
 const ScoreItem = loadable(() => import("../components/Score-Item"))
+const Button = loadable(() => import("../components/Button"))
 
 export default function ScoreReport() {
      return (
           <Wrapper title="Learning Management System for School - Score Report" description="Learning Management System for School - Score Report">
-               <h1 className="text-main font-bold mb-1">
-                    Score Report
-               </h1>
-               <h4 className="text-gray-500 mb-3">10 IPA 1 - Odd 2021/2022</h4>
+               <div className="lg:flex justify-between items-end">
+                    <div>
+                         <h1 className="text-main font-bold mb-1">
+                              Score Report
+                         </h1>
+                         <h4 className="text-gray-500 mb-3">10 IPA 1 - Odd 2021/2022</h4>
+                    </div>
+                    <div className="my-3">
+                         <Button text={"Generate Report File"} type={1} />
+                    </div>
+               </div>
                <hr />
                <div className="grid grid-cols-6 gap-3">
                     <div className="col-span-4 my-3">
